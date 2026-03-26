@@ -340,9 +340,7 @@ function EditCourseContributors(props: EditCourseContributorsProps) {
             const selectedUsernames = contributors
                 ?.filter(c => selectedContributors.includes(c.user_id))
                 .map(c => c.user.username) || [];
-
-            console.log('Sending usernames:', selectedUsernames); // Debug log
-
+                
             const response = await bulkRemoveContributors(
                 courseStructure.course_uuid, 
                 selectedUsernames, // Send as raw array, not stringified
